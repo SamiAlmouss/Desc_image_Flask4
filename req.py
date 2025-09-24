@@ -8,6 +8,7 @@ def run_app():
     while True:
         try:
             r=requests.get(url0, timeout=100)
+            print(r.status_code)
             r=requests.get(url1, timeout=100)
             print(r.status_code)
             time.sleep(300)
@@ -16,4 +17,5 @@ def run_app():
 
 t = threading.Thread(target=run_app)
 t.daemon=True
+
 t.start()
