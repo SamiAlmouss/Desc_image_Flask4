@@ -3,7 +3,7 @@ import requests
 import time
 url0 = "https://desc-image-flask2.onrender.com/"
 url1 = "https://desc-image-flask4.onrender.com/"
-
+url2 = "https://ai-chat-2-b21w.onrender.com//"
 def run_app():
     while True:
         try:
@@ -11,6 +11,9 @@ def run_app():
             print(r.status_code)
             r=requests.get(url1, timeout=100)
             print(r.status_code)
+            r=requests.get(url2, timeout=100)
+            print(r.status_code)
+
             time.sleep(300)
         except requests.RequestException as e:
             print("Request failed:", e)
@@ -19,3 +22,4 @@ t = threading.Thread(target=run_app)
 t.daemon=True
 
 t.start()
+
